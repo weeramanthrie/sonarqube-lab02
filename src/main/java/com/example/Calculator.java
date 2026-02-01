@@ -10,8 +10,6 @@ public int calculate(int a, int b, String op) {
         return a + b; // DUPLICATION
     } else if (op.equals("sub")) {
         return a - b;
-    } else if (op.equals("sub-again")) {
-        return a - b; // DUPLICATION
     } else if (op.equals("mul")) {
         return a * b;
     } else if (op.equals("div")) {
@@ -33,9 +31,5 @@ public int calculate(int a, int b, String op) {
     }
 }
 
-}
-// INTENTIONAL DUPLICATION
-public int addAgain(int a, int b) {
-return a + b;
 }
 

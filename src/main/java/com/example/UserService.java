@@ -27,7 +27,13 @@ public class UserService {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    LOGGER.log(Level.INFO, () -> "User: " + rs.getString("name"));
+                    LOGGER.log(Level.INFO, () -> {
+                        try {
+                            return "User: " + rs.getString("name");
+                        } catch (SQLException e) {
+                            return "User: (unable to retrieve name)";
+                        }
+                    });
                 }
             }
         }
